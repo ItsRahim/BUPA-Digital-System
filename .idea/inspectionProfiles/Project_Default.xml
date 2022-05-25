@@ -1,0 +1,18 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="MavenPackageUpdate" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="excludeList">
+        <list>
+          <option value="eu.hansolo:tilesfx" />
+          <option value="net.synedra:validatorfx" />
+          <option value="com.dlsc.formsfx:formsfx-core" />
+          <option value="org.controlsfx:controlsfx" />
+          <option value="org.openjfx:javafx-controls" />
+          <option value="org.openjfx:javafx-fxml" />
+          <option value="org.openjfx:javafx-web" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

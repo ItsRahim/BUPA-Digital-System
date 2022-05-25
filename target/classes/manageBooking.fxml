@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="810.0" prefWidth="1310.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.manageBookingController">
+   <children>
+      <TableView fx:id="bookingTable" editable="true" layoutX="232.0" layoutY="194.0" prefHeight="602.0" prefWidth="1023.0" style="-fx-alignment: center;" stylesheets="@style.css">
+        <columns>
+            <TableColumn fx:id="idColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" style="-fx-alignment: center;" text="Booking ID" />
+          <TableColumn fx:id="visitorColumn" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" style="-fx-alignment: center;" text="Visitor" />
+            <TableColumn fx:id="residentColumn" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" style="-fx-alignment: center;" text="Resident" />
+            <TableColumn fx:id="roomColumn" maxWidth="175.0" minWidth="175.0" prefWidth="175.0" style="-fx-alignment: center;" text="Room Number" />
+            <TableColumn fx:id="dateColumn" maxWidth="150.0" minWidth="120.0" prefWidth="150.0" style="-fx-alignment: center;" text="Date of Visit" />
+          <TableColumn fx:id="statusColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="Status" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header" />
+            <String fx:value="column-header-background" />
+            <String fx:value="dashboard-colour" />
+            <String fx:value="filler" />
+            <String fx:value="font" />
+            <String fx:value="label" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-row-cell" />
+         </styleClass>
+      </TableView>
+      <Text fx:id="manageText" fill="#00afef" layoutX="262.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Booking">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER" layoutX="262.0" layoutY="108.0" prefHeight="74.0" prefWidth="654.0">
+         <children>
+            <Button fx:id="addUser" mnemonicParsing="false" onMouseClicked="#addBookingClicked" prefHeight="37.0" prefWidth="84.0" style="-fx-background-color: #00afef; -fx-background-radius: 60;" text="Add New">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="delete" layoutX="317.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#deleteBookingClicked" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #F44336; -fx-background-radius: 60;" text="Delete">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="refresh" layoutX="38.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#refreshClicked" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #B2FF59; -fx-background-radius: 60;" text="Refresh">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="generate" layoutX="401.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#generateCompletedBookings" prefHeight="37.0" prefWidth="159.0" style="-fx-background-color: #FF9800; -fx-background-radius: 60;" text="Generate Booking Log">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="scanQR" layoutX="389.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#scanQRClicked" prefHeight="37.0" prefWidth="75.0" style="-fx-background-color: #BDBDBD; -fx-background-radius: 60;" text="Scan QR">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="810.0" prefWidth="232.0" stylesheets="@style.css">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="280.0" onMouseClicked="#homeButtonClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/dashboard.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Homepage">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#residentButtonClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/viewResident.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Manage Residents">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="visitorButton" alignment="CENTER_LEFT" layoutX="20.0" layoutY="415.0" onMouseClicked="#visitorButtonClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/addVisitor.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Manage Visitor">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="userButton" alignment="CENTER_LEFT" layoutX="20.0" layoutY="393.0" onMouseClicked="#manageUserClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/manageUser.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Manage Users">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="303.0" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #B4EBFF;" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/manageBooking.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Manage Booking">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="393.0" onMouseClicked="#insightsClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/insight.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Insights">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox fx:id="settingButton" alignment="CENTER_LEFT" layoutX="20.0" layoutY="415.0" onMouseClicked="#settingsClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/setting.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Settings">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="483.0" onMouseClicked="#signoutClicked" prefHeight="45.0" prefWidth="200.0" styleClass="button" stylesheets="@style.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/signout.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Signout">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="785.0" layoutY="59.0" text="Search Booking">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTextField" layoutX="925.0" layoutY="60.0" prefWidth="330.0" />
+   </children>
+</AnchorPane>

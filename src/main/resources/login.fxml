@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1310.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.LoginController">
+   <left>
+      <AnchorPane prefHeight="810.0" prefWidth="655.0" style="-fx-background-color: #00AFEF;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="147.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Collingwood Court Digital Systems" textAlignment="CENTER" wrappingWidth="361.68505859375">
+               <font>
+                  <Font name="Arial Black" size="31.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="66.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" text="020 3811 2187" textAlignment="CENTER" wrappingWidth="205.42431640625">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="phoneImageView" fitHeight="33.0" fitWidth="40.0" layoutX="27.0" layoutY="638.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/phone.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="webImageView" fitHeight="33.0" fitWidth="40.0" layoutX="27.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/website.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="managerImageView" fitHeight="33.0" fitWidth="40.0" layoutX="27.0" layoutY="721.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/manager.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="66.0" layoutY="746.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lee Ndou-Sidija" textAlignment="CENTER" wrappingWidth="221.42431640625">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Text>
+            <Hyperlink layoutX="66.0" layoutY="672.0" onAction="#openLink" text="www.bupa.co.uk" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="800.0" prefWidth="655.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="usernameTextField" alignment="CENTER" layoutX="216.0" layoutY="276.0" prefHeight="32.0" prefWidth="253.0" promptText="Enter Email" style="-fx-border-color: #c3ecfb; -fx-background-color: #c3ecfb;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <PasswordField fx:id="passwordTextField" alignment="CENTER" layoutX="216.0" layoutY="327.0" prefHeight="32.0" prefWidth="253.0" promptText="Enter Password" style="-fx-border-color: #c3ecfb; -fx-background-color: #c3ecfb;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </PasswordField>
+            <Button fx:id="loginButton" alignment="CENTER" contentDisplay="CENTER" layoutX="186.0" layoutY="387.0" mnemonicParsing="false" onAction="#loginButtonAction" prefHeight="32.0" prefWidth="288.0" style="-fx-background-color: #00AFEF;" text="Login" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="387.0">
+               <font>
+                  <Font name="Calibri Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="userImageView" fitHeight="38.0" fitWidth="38.0" layoutX="182.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/username.png" />
+               </image>
+            </ImageView>
+            <Text fill="#00afef" layoutX="150.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back!" textAlignment="CENTER" wrappingWidth="354.1962890625">
+               <font>
+                  <Font name="Arial Black" size="40.0" />
+               </font>
+            </Text>
+            <Text fill="#00afef" layoutX="222.0" layoutY="104.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to continue" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="passwordImageView" fitHeight="32.0" fitWidth="35.0" layoutX="186.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/password.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="invalidLoginLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="201.0" layoutY="365.0" textAlignment="CENTER" textFill="#fc0000">
+               <font>
+                  <Font name="Calibri Light" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="quitButton" alignment="CENTER" contentDisplay="CENTER" layoutX="286.0" layoutY="749.0" mnemonicParsing="false" onAction="#quitButtonAction" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #00AFEF;" text="Quit" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

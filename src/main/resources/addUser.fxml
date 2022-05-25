@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="522.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.addEmployeeController">
+   <children>
+      <Label prefHeight="57.0" prefWidth="373.0" style="-fx-background-color: #FFFFFF;" text="Add New Employee">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </Label>
+      <Separator prefWidth="200.0" />
+      <GridPane prefHeight="528.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="187.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="348.0" minWidth="10.0" prefWidth="313.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="115.0" minHeight="0.0" prefHeight="49.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="132.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="First Name:">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Last Name:" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Role:" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Email:" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Password:" GridPane.rowIndex="4">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="firstNameField" GridPane.columnIndex="1" />
+            <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="roleMenu" prefHeight="26.0" prefWidth="292.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Separator prefWidth="200.0" GridPane.rowIndex="6" />
+            <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Personal Information" GridPane.rowIndex="7">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Date of Birth:" GridPane.rowIndex="9">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <Separator prefWidth="200.0" GridPane.rowIndex="8" />
+            <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <DatePicker fx:id="dobMenu" prefHeight="26.0" prefWidth="312.0" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="Gender" GridPane.rowIndex="10">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <children>
+                  <RadioButton fx:id="maleRadio" mnemonicParsing="false" text="Male" />
+                  <RadioButton fx:id="femaleRadio" mnemonicParsing="false" text="Female">
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="otherRadio" mnemonicParsing="false" text="Other" />
+               </children>
+            </HBox>
+            <Label text="Confirm Password:" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#saveButton" style="-fx-background-color: #00E676;" text="Save" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="closeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" style="-fx-background-color: #E53935;" text="Cancel">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
